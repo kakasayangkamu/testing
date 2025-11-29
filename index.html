@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Notnon Video</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <span class="badge-dot"></span>
+      <span>Notnon</span><span>Video</span>
+    </div>
+    <div class="stats">
+      <span id="totalVideos">0 video</span>
+      <span id="totalSize">0 MB</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- PLAYER -->
+    <section class="player-section">
+      <div class="player-card">
+        <h2 id="nowPlayingTitle">Pilih video untuk diputar</h2>
+
+        <div id="playerContainer">
+          <!-- Placeholder dulu -->
+          <div class="player-placeholder" id="playerPlaceholder">
+            <div class="player-placeholder-icon"></div>
+            <div>Pilih salah satu video di sebelah kanan / bawah untuk mulai menonton.</div>
+          </div>
+
+          <!-- Video player disembunyikan dulu -->
+          <video id="mainPlayer" controls preload="metadata" style="display:none;">
+            <source id="mainSource" src="" type="video/mp4" />
+            Browser kamu tidak mendukung video HTML5.
+          </video>
+        </div>
+
+        <div class="player-meta">
+          <span id="nowPlayingSize"></span>
+          <span id="nowPlayingDate"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIST VIDEO -->
+    <section class="list-section">
+      <div class="list-header">
+        <h3>Daftar Video <span class="pill-count" id="pillCount">0</span></h3>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Cari nama file..."
+        />
+      </div>
+      <div id="videoList" class="video-list">
+        <!-- Card video di-generate dari app.js -->
+      </div>
+      <div id="emptyState" class="empty-state" style="display:none;">
+        Tidak ada video yang cocok dengan pencarian.
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Notnon Video • sumber: <code>data_upload.json</code></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
